@@ -92,3 +92,15 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     except Exception as e:
         logger.error(f"Error: {e}")
         await update.message.reply_text("Ups, ada masalah teknis. Coba lagi ya.")
+
+
+
+def main():
+    app = Application.builder().token(TELEGRAM_BOT_TOKEN).build()
+    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
+
+    logger.info('Bot Running... Press Ctrl+C to stop.')
+    app.run_polling()
+
+if __name__ == "__main__":
+    main()
