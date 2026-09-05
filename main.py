@@ -48,3 +48,11 @@ def call_gemini(message_text: str) -> dict:
         raw_text = raw_text.strip("`").replace("json", "", 1).strip()
 
     return json.loads(raw_text)
+
+
+
+def get_sheet():
+    scopes = ["https://www.googleapis.com/auth/spreadsheets"]
+    creds = Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=scopes)
+    client = gspread.authorize(creds)
+    return client.open(GOOGLE_SHEET_NAME).sheet1
