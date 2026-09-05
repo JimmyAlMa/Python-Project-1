@@ -52,8 +52,15 @@ def call_gemini(message_text: str) -> dict:
 
 
 def get_sheet():
-    scopes = ["https://www.googleapis.com/auth/spreadsheets"]
-    creds = Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=scopes)
+    SCOPES = [
+        "https://www.googleapis.com/auth/spreadsheets",
+        "https://www.googleapis.com/auth/drive"
+        ]
+        
+    creds = Credentials.from_service_account_file(
+        SERVICE_ACCOUNT_FILE,
+        scopes=SCOPES
+        )
     client = gspread.authorize(creds)
     return client.open(GOOGLE_SHEET_NAME).sheet1
 
