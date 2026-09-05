@@ -29,7 +29,7 @@ client = genai.Client(api_key=GEMINI_API_KEY)
 MODEL_NAME = "gemini-3.1-flash-lite"
 
 SYSTEM_PROMPT = """Kamu parser pencatat keuangan. Ubah pesan berikut menjadi JSON
-dengan format persis: {"kategori": string, "nominal": number, "deskripsi": string}.
+dengan format persis: {{"kategori": string, "nominal": number, "deskripsi": string}}.
 Balas HANYA JSON, tanpa penjelasan apapun, tanpa markdown code block.
 
 Pesan: {message_text}"""
