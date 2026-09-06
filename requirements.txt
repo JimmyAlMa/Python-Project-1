@@ -2,3 +2,4 @@ python-telegram-bot
 google-genai
 gspread
 google-auth
+python-dotenv
