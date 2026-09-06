@@ -98,7 +98,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
     except Exception as e:
         logger.error(f"Error: {e}")
-        await update.message.reply_text("Ups, ada masalah teknis. Coba lagi ya.")
+        await update.message.reply_text(f"Error: {e}")
 
 
 
