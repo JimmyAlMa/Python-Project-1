@@ -52,7 +52,10 @@ def call_gemini(message_text: str) -> dict:
 
 
 def get_sheet():
-    scopes = ["https://www.googleapis.com/auth/spreadsheets"]
+    scopes = [
+        "https://www.googleapis.com/auth/spreadsheets",
+        "https://www.googleapis.com/auth/drive.readonly",
+    ]
     creds_json_str = os.environ.get("GOOGLE_CREDS_JSON")
     if creds_json_str:
         creds_dict = json.loads(creds_json_str)
