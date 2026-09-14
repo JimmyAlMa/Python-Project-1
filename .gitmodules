@@ -1,0 +1,6 @@
+[submodule "Income-Tracker-Bot"]
+	path = Income-Tracker-Bot
+	url = https://github.com/JimmyAlMa/Income-Tracker-Bot.git
+[submodule "Expenses-Tracker-Bot"]
+	path = Expenses-Tracker-Bot
+	url = https://github.com/JimmyAlMa/Expenses-Tracker-Bot.git
